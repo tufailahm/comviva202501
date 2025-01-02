@@ -52,13 +52,18 @@ JRE stands for Java Runtime Environment
 
 JVM stands for Java Virtual Machine
 
-JDK contains the JRE, as well as many different developer tools, such as the compiler or the archiver.
+JDK contains the JRE, 
+as well as many different developer tools, 
+such as the compiler or the archiver.
 
-JRE contains the JVM as well as supporting libraries that the JVM needs to function.
+JRE contains the JVM as well as supporting libraries 
+that the JVM needs to function.
 
-The Java Compiler is the executable that produces Java ByteCode from Java Source Code (From .java to .class)
+The Java Compiler is the executable that produces 
+Java ByteCode from Java Source Code (From .java to .class)
 
-The JVM (along with the libraries from the JRE) executes the Java ByteCode.
+The JVM (along with the libraries from the JRE) 
+executes the Java ByteCode.
 
 
 10:13
