@@ -25,7 +25,10 @@ What is java ?
 
 # Java
 
-Java is an Object Oriented Programming language. It was picked up by Oracle, that develops 1 common implementation of the JRE and JDK, and through their (and others) efforts, Java has become very widely used.
+Java is an Object Oriented Programming language.
+ It was picked up by Oracle, that develops 1 common implementation of the JRE and JDK, 
+and through their (and others) efforts,
+ Java has become very widely used.
 
 ## Features/Characteristics
 
@@ -165,7 +168,8 @@ float f=1.01;
 
 
 
-Java has 8 primitive datatypes that are NOT objects. These primitive datatypes are generally stored on the stack (if they are local variables).
+Java has 8 primitive datatypes that are NOT objects. 
+These primitive datatypes are generally stored on the stack (if they are local variables).
 - int
     - 4 bytes = 32 bits
 - double
