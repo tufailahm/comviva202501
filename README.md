@@ -132,19 +132,186 @@ Hands on:
 
 Recommended duration: 20 Mins
 
+==================
+
+Next topics
+ Enhanced for introduced in JDK 1.5
+Control Flow statements 
+if else
+switch
+
+•	Constructors
+•	Default and Args Constructor
+•	Getters and Setters
+•	Data types and Operators
+•	Arrays 
+•	
+•	Enums
+Class Design
+•	Class and Objects
+•	Instance Variables and Static Variables
+•	Methods and Constructors
+
+float f=1/3; 
+int i=1/3;
+float f=1.01;
+
+
+
+
+Java has 8 primitive datatypes that are NOT objects. These primitive datatypes are generally stored on the stack (if they are local variables).
+- int
+    - 4 bytes = 32 bits
+- double
+    - 8 bytes = 64 bits
+- byte
+    - 1 byte = 8 bits
+- boolean
+    - 1 byte = 8 bits (sort of)
+    - JVM dependent
+    - They can potentially be stored in only 1 bit, if many booleans are created
+    - Among other optimizations
+- char
+    - 2 bytes = 16 bits
+- long
+    - 8 bytes = 64 bits
+- float
+    - 4 bytes = 32 bits
+- short
+    - 2 bytes = 16 bits
+
+
+numbers
+
+byte
+short
+*int
+long
+
+decimal
+
+float
+*double
+
+int marks = 90;
+float grade = 67.7;
+byte rate = 500;
+
+byte b1 = 10;
+byte b2 = 20;
+byte b3 = b1 + b2;
+
+
+float f=1/3; 
+int i=1/3;
+float f=1.01;
+
+
+
+		long b11 = 10;
+		long b22 = 20;
+		long b33 = b11 + b22;
+
+
+Hands on : 10 minutes
+
+Print default values of all primitive data types
+
+
+==============================
+
+Constructor in java
+
+--------------------------
+special method same name as class name
+used to initizlize member variables/attributes
+will be automatically invoked whenever you create an object.
+
+package comvivaapp;
+
+public class Customer {
+	int customerId=199;
+	String customerName="Karthik";
+	int billAmount=8500;
+	
+	public Customer() { //default cons
+		System.out.println("Hello Customer Default cons");
+		customerName="NA";
+		billAmount = 9000;
+	}
+	public Customer(int customerId,String customerName,int billAmount) { //default cons
+		System.out.println("Hello Customer 3 param");
+		this.customerId = customerId;
+		this.customerName = customerName;
+		this.billAmount = billAmount;
+	}
+	public Customer(String customerName) {
+		System.out.println("Hello Customer customername cons");
+		this.customerName = customerName;
+	}
+	public void printCustomerDetails() {
+		System.out.println("Customer Id :"+customerId);
+		System.out.println("Customer Name :"+customerName);
+		System.out.println("Customer Bill Amount :"+billAmount);
+	}
+	public static void main(String[] args) {
+		System.out.println("1st customer ...");
+		Customer customer1 = new Customer(91872,"Nikitha", 5600);
+		customer1.printCustomerDetails();
+		System.out.println("2nd customer ...");
+		Customer customer2 = new Customer();
+		customer2.printCustomerDetails();
+		System.out.println("3rd customer ...");
+		Customer customer3 = new Customer("Pritam");
+		customer3.printCustomerDetails();
+
+	}
+}
 
 
 
 
 
 
+Create a Product class inside com.training.comviva.model package with following attributes 
+productId		int
+productName	String
+quantityOnHand	int
+price		int
+
+a) Make all the above fields as private
+b) Create default and parametrized constructor 
+
+a) create three product objects and assign different product details
+b) Print all the three products information
+
+20 minutes
 
 
+Getters and Setters
+================
 
+Used to access and modify the member variable outside the class.
 
+Hands on :
 
+Create a class named Visitor with following properties :
 
+visitorId
+visitorName
+purpose
+contactPerson
 
+1) Create all the possible constructors
+2) Create setters and getters for all member variables
+
+a) Create another class VisitorMain to register three register.
+b) The contact person for all the three are same i.e Pursottam
+c) Create first visitor as new Visitor(19191,"Tufail","Training","Pursottam");
+d) Create second visitor as new Visitor(19192,"Neha","Meeting");
+d) Create third visitor as new Visitor(19193,"Tarun","Interview");
+
+https://codeshare.io/tufail
 
 
 
