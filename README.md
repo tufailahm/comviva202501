@@ -296,22 +296,20 @@ Used to access and modify the member variable outside the class.
 Hands on :
 
 Create a class named Visitor with following properties :
-
 visitorId
 visitorName
 purpose
 contactPerson
-
 1) Create all the possible constructors
 2) Create setters and getters for all member variables
-
-a) Create another class VisitorMain to register three register.
+   
+Create another class VisitorMain to register three register.
 b) The contact person for all the three are same i.e Pursottam
 c) Create first visitor as new Visitor(19191,"Tufail","Training","Pursottam");
 d) Create second visitor as new Visitor(19192,"Neha","Meeting");
 d) Create third visitor as new Visitor(19193,"Tarun","Interview");
 
-https://codeshare.io/tufail
+
 
 
 
