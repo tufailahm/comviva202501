@@ -123,6 +123,12 @@ private
 protected
 default
 
+===========================================
+Hands on:
+	Create a new project named zooapp in which create a package named org.animals. In that create various classes like Lion, Monkey, Elephant. In each class create data members like color, weight and age. Create methods like isVegetarian, canClimb, getSound.
+	Create another package called zoo and create a class called VandalurZoo and create objects for the animals that are existing in zoo and print the characteristic of each animal.
+
+Recommended duration: 20 Mins
 
 
 
