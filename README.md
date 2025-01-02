@@ -1,5 +1,7 @@
 "# comviva202501" 
 
+https://github.com/tufailahm/comviva202501
+
 
 JDK  : https://www.oracle.com/java/technologies/javase/jdk21-archive-downloads.html
 Eclipse IDE : https://www.eclipse.org/downloads/packages/release/2024-06/
@@ -81,4 +83,29 @@ public class comviva
 		
 }
 
+
+Eclipse IDE
+=============
+
+Packages in java
+==============
+Predefined packages in java : java.util, java.io, lang (by default)
+
+User defined packages
+
+
+Hands on :
+Create two packages
+hr
+	Clerk
+		work()
+finance
+	Salary
+		calculateSalary()
+
+Call these two methods inside main method of App class
+
+
+15 Minutes
+11:40 02-01-2025
 
