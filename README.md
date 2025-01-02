@@ -107,5 +107,46 @@ Call these two methods inside main method of App class
 
 
 15 Minutes
-11:40 02-01-2025
+
+
+Inheritance in java
+===============
+extends
+
+
+
+Access Specifiers
+===============
+
+public
+private
+protected
+default
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
