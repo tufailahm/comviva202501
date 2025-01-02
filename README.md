@@ -123,6 +123,7 @@ private
 protected
 default
 
+<br/>
 ===========================================
 Hands on:
 	Create a new project named zooapp in which create a package named org.animals. In that create various classes like Lion, Monkey, Elephant. In each class create data members like color, weight and age. Create methods like isVegetarian, canClimb, getSound.
