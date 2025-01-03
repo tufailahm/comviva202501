@@ -55,7 +55,34 @@ class Cheetah extends CatFamily
 	}
 	
 }
-class Men extends Animal {
+interface Study
+{
+	void attendCollege();
+	int fees=9000;
+}
+interface Party
+{
+	void doParty();
+	int fees=9000;
+}
+interface Cocurricular
+{
+	void playGames();
+	int fees=9000;
+}
+interface Cricket extends Cocurricular
+{
+	void batting();
+	void fielding();
+	//JDK 1.8 >
+	public default void doToss() {
+		
+	}
+	public static void shareScores() {
+		
+	}
+}
+class Men extends Animal implements Study,Party,Cricket {
 	@Override
 	public void eat() {
 		// TODO Auto-generated method stub
@@ -63,6 +90,37 @@ class Men extends Animal {
 
 	@Override
 	public void makeSound() {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	@Override
+	public void doParty() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void attendCollege() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void playGames() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void batting() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void fielding() {
 		// TODO Auto-generated method stub
 		
 	}

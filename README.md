@@ -445,14 +445,47 @@ Abstract class and Interfaces
 =====================
 
 
+Exception Handling
+=================
+Object
+|
+Throwable
+	|
+Error	and 	Exception (Checked)
+		
+		RuntimeException (Unchecked)
+			ArthimeticException
+
+		IOException (Checked)
+		InterruptedException (Checked)
+		ClassNotFoundException (Checked)
 
 
 
 
+public class Tester {
+	static int m(int i) {
+		try {
+			System.out.println("TRY block CALLED");
+			i++;
+			if (i == 1)
+				throw new Exception();
+		} catch (Exception e) {
+			System.out.println("CATCH block CALLED");
+			i += 10;
+			return i;
+		} finally {
+			System.out.println("FINALLY block CALLED");
+			i += 5;
+		}
+		i++;
+		return i;
+	}
 
-
-
-
+	public static void main(String[] args) {
+		System.out.println(m(0));
+	}
+}
 
 
 
