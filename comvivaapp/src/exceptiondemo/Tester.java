@@ -2,7 +2,7 @@ package exceptiondemo;
 public class Tester {
 	static int m(int i) {
 		try {
-			System.out.println("1. TRY block CALLED");
+			System.out.println("1.TRY block CALLED");
 			i++;
 			if (i == 1)
 				throw new Exception();  // brings exception

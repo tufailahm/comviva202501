@@ -489,3 +489,19 @@ public class Tester {
 
 
 
+InvalidUserException extends Exception
+InvalidPasswordException extends RuntimeException
+
+
+throw - brings an exception
+throws - delegate an exception
+
+
+
+
+
+
+
+
+
+

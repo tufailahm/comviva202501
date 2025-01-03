@@ -14,7 +14,6 @@ public class Visitor {
 	private int time;
 	
 	public Visitor() {
-		// TODO Auto-generated constructor stub
 	}
 
 	public Visitor(int visitorId, String visitorName, String purpose, String contactPerson) {

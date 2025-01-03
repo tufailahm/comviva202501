@@ -3,6 +3,7 @@ package exceptiondemo;
 public class Demo1 {
 
 	public static void main(String[] args) {
+		String pass="nn";
 		System.out.println("1. Hi");
 
 		try {
@@ -10,6 +11,8 @@ public class Demo1 {
 			System.out.println("2. Hello");
 			System.out.println(20 / 5);
 			System.out.println("Done");
+			if(pass.equals("nn"))
+				throw new InvalidPasswordException("Password is incorrect");
 			int num[] = new int[5];
 			System.out.println(num[8]);
 			System.out.println("Comviva");
@@ -17,7 +20,11 @@ public class Demo1 {
 			System.out.println("3. ERROR OCCURRED " + e);
 		} catch (ArrayIndexOutOfBoundsException e) {
 			System.out.println("3. ERROR OCCURRED " + e);
-		} catch (Exception e) {
+		}
+		catch(InvalidPasswordException e) {
+			
+		}
+		catch (Exception e) {
 			System.out.println("3. ERROR OCCURRED " + e);
 		}
 		finally {
