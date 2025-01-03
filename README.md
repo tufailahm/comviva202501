@@ -325,6 +325,122 @@ c) Create first visitor as new Visitor(19191,"Tufail","Training","Pursottam");
 d) Create second visitor as new Visitor(19192,"Neha","Meeting");
 d) Create third visitor as new Visitor(19193,"Tarun","Interview");
 
+Types of variables
+
+instance 
+local
+static
+
+
+Use case : I want to count customers orders
+
+
+Over loading
+
+Constructor Overloading
+
+Hands On : Overload methods to calculate sum of two and three numbers
+using int , byte and short data types.
+
+10 minutes
+
+Inheritance
+===============
+
+
+Every class in java inherits from Object class, 
+if they dont inherit from other classes
+super class for all the classes - Object
+
+*Multiple inheritance is not allowed 
+
+Employee:Object
+PermanentEmployee:Employee
+
+ Object
+
+toString
+equals
+finalize
+wait
+notify
+
+==		- reference
+equals		- value
+
+
+
+Parent class object holding child class reference
+How to call GC ( System.gc());
+
+
+package inherit;
+
+class Employee extends Object
+{
+	int employeeId;
+	String employeeName;
+	int salary=10000;
+	public void markAttendance() {
+		System.out.println("Employee Marked the attendance");
+	}
+	@Override
+	protected void finalize() throws Throwable {
+		System.out.println("FINALIZE CALLED");
+	}
+}
+class PermanentEmployee extends Employee 
+{
+	int regularSalary;
+	int salary=500000;
+	public void allocateProject() {
+		int salary=8000000;
+		System.out.println(salary);
+		System.out.println(this.salary);
+		System.out.println(super.salary);
+		System.out.println("Permanent Employee project allocated");
+	}
+}
+class ContractEmployee extends Employee 
+{
+	int payPerHour;
+	public void issueTemporaryPass() {
+		System.out.println("Contract Employee pass issued");
+	}
+	public void markAttendance() {
+		System.out.println("Contract employee attandance marked");
+	}
+}
+public class EmployeeApp {
+	public static void main(String[] args) {
+		System.out.println("Way 1");
+		//way 1
+		PermanentEmployee obj1 = new PermanentEmployee();
+		obj1.markAttendance();
+		//obj1.allocateProject();
+		ContractEmployee obj2 = new ContractEmployee();
+		obj2.markAttendance();
+		//obj2.issueTemporaryPass();
+		
+		//way 2
+		System.out.println("Way 2");
+		Employee e1 = new PermanentEmployee();
+		e1.markAttendance();
+		e1 = new ContractEmployee();
+		e1.markAttendance();
+		
+		obj1 = null;
+		obj2 = null;
+		e1 = null;
+		System.gc();  //calls the GC
+	
+	}
+}
+
+
+
+
+
 
 
 
