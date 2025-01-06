@@ -604,7 +604,10 @@ public class YieldingThread1 extends Thread
 
 Thread synchronization - Locking
 =============================
-Synchronization is the cooperative act of two or more threads that ensures that each thread reaches a known point of operation in relationship to other threads before continuing. Attempting to share resources without correctly using synchronization is the most common cause of damage to application data.
+Synchronization is the cooperative act of two or more threads that ensures that 
+each thread reaches a known point of operation in relationship to other threads before continuing. 
+Attempting to share resources without correctly using 
+synchronization is the most common cause of damage to application data.
 
 package threaddemos;
 
