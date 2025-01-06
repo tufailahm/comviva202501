@@ -698,6 +698,73 @@ public class DeadlockExample {
     }
 }
 
+What is Wrapper classes
+====================
+int	Integer
+float	Float
+short	Short
+
+
+String marks = "90";
+Integer i = Integer.parseInt(marks);
+System.our.println(i+5);
+
+
+
+
+
+
+
+
+
+Collections
+===================
+-- Library to use data structures
+-- framework - pre defined set of apis
+-- Reinvent the wheel
+-- Pre defined set of classes and interfaces
+-- Lots of choices 
+-- Reduces your learning curve
+
+Use case : Accept five numbers and print in ascending order.
+
+java.util
+
+Colletction<I>
+Set<I> (No duplicates)	List<I>(duplicates)	        Map<I>
+
+HashSet			ArrayList ( not thread safe)
+TreeSet			LinkedList (not synchronized, not thread safe)
+LinkedHashSet		Vector (synchronized, thread safe)
+
+No, LinkedList in Java is not synchronized. This means that it is not thread-safe by default.
+
+Collections<C>
+
+Hands On : Threading
+
+A prompt asking a question appears for which user is given 1 minute. If user answers the question before 1 minute then “Congratulations!” is displayed. Otherwise “Better Luck Next Time” is displayed.
+Write a program to implement the above scenario.
+(30 mins)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
