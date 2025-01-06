@@ -497,6 +497,110 @@ throw - brings an exception
 throws - delegate an exception
 
 
+================================
+
+
+Threads and Collections
+
+
+- Light weight processes
+- concurrent programming
+- real times examples : OS
+- Thread
+
+Two ways
+
+--- by extending Thread class 
+--- by implementing Runnable interface
+
+
+run
+
+
+Different states of thread
+
+NEW
+NOt initialized
+NOT running
+RUNNABLE
+RUNNING
+DEAD
+
+
+
+
+---Thread methods
+
+sleep
+run
+interrupt
+join
+	wait
+	notify
+	notifyall
+yield
+start
+setName
+
+
+
+
+-----
+Yield
+
+
+---Running to runnable
+---Give chance to other threads to execute before itself
+
+----Real time -- Yield
+
+
+#THREAD ::  2: 3
+#THREAD ::  2: 2
+#THREAD ::  2: 1
+#THREAD ::  1: 3
+#THREAD ::  1: 2
+#THREAD ::  1: 1
+#THREAD ::  3: 3
+#THREAD ::  3: 2
+#THREAD ::  3: 1
+#THREAD ::  4: 3
+#THREAD ::  4: 2
+#THREAD ::  4: 1
+
+
+package threaddemos;
+public class YieldingThread1 extends Thread
+{
+	private int countDown = 3;
+	private static int threadCount = 0;
+
+	public YieldingThread1()
+	{
+		super("COMVIVA" + ++threadCount);
+    		start();
+	}
+	public String toString()
+	{
+		return "#" + getName() + ": " + countDown;
+	}
+	public void run()
+	{
+		while (true)
+		{
+			System.out.println(this);
+			if (--countDown == 0)
+				return;
+			Thread.yield();
+		}
+  	}
+	public static void main(String[] args)
+	{
+		for (int i = 0; i <3; i++)
+			new YieldingThread1();
+	}
+}
+
 
 
 

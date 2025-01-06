@@ -10,7 +10,6 @@ public class DemoThrows {
 		System.out.println("Display 2 started");
 		Thread.sleep(10000);
 		System.out.println("Display 2 ended");
-
 	}
 	public void anotherMethod() {
 		DemoThrows d1 = new DemoThrows();
