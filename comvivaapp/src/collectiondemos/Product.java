@@ -12,7 +12,7 @@ public class Product implements Comparable<Product>{
 	
 	@Override
 	public int compareTo(Product o) {
-		// TODO Auto-generated method stub
+		 // TODO Auto-generated method stub
 		if(o.getQuantityOnHand() > this.getQuantityOnHand())
 		{
 			return -1;

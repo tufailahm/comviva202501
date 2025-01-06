@@ -997,16 +997,25 @@ public class Product implements Comparable<Product>{
 
 
 
+===================
+
+Comparable 	vs Comparator interface
+
+java.lang		java.util
+same class	different class
+
+compareTo(o1)	compare(o1,o2)
 
 
 
+-----------
 
+Map<K,V> (will not accept duplicate keys)
 
-
-
-
-
-
+TreeMap	- sorted on keys
+HashMap - no order is guranteed HashMap is not synchronized by default
+LinkedHashMap - as you enter
+HashTable - sync and thread safe
 
 
 

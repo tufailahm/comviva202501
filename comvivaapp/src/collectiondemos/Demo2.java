@@ -1,41 +1,45 @@
 package collectiondemos;
+import java.util.*;
 
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.Set;
 
-public class Demo2 {
-
-	public Demo2() {
-		// TODO Auto-generated constructor stub
+public class Demo2 
+{
+	int p=100;
+	{
+		
+		System.out.println("3. A");
 	}
-
-	public static void main(String[] args) {
-		Set<String> coupons = new HashSet<String>();
-		coupons.add("RENU");
-		coupons.add("JAGSG");
-		coupons.add("AAGSG");
-		coupons.add("IPSHS");
-		coupons.add("RAGSG");
-		coupons.add("KAPOOR");
-		System.out.println("Coupons is empty : " + coupons.isEmpty());
-		System.out.println(coupons);
-		
-		System.out.println("All coupons - for each loop");
-		for(String s:coupons)
-		{
-			System.out.println(s);
-		}
-		
-		System.out.println("All coupons - except starting A");
-		Iterator<String> iterator = coupons.iterator();
-		while(iterator.hasNext()) {
-			String temp = iterator.next();
-			if(!temp.startsWith("A"))
-			System.out.println(temp);
-		
+	static 
+	{
+		System.out.println("1..... COMVIVA STATIC BLOCK");
+	}
+	public Demo2() {
+		System.out.println("4. B");
+	}
+	public void display() {
+		System.out.println("5. C");
+	}
+	public static void main(String[] args)
+	{  
+			System.out.println("2.  D");
+			Demo2 d = new Demo2();
+			d.display();
 			
-		}
-		
+			Map<String,Integer> dd = new LinkedHashMap<String,Integer>();    
+			
+			dd.put("One", new Integer(1)); 
+			dd.put("Two", new Integer(2));
+			
+			Object obj = dd.get("One");   
+			System.out.println(obj);
+			
+			System.out.println(dd); 
+			
+			HashMap hs = new HashMap();
+			hs.put("1","Tufail");
+			hs.put("1", "Tarun");
+			
+			System.out.println(hs);
+			
 	}
 }
