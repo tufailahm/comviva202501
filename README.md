@@ -724,7 +724,7 @@ Collections
 ===================
 -- Library to use data structures
 -- framework - pre defined set of apis
--- Reinvent the wheel
+-- No Need to reinvent the wheel
 -- Pre defined set of classes and interfaces
 -- Lots of choices 
 -- Reduces your learning curve
@@ -736,9 +736,9 @@ java.util
 Colletction<I>
 Set<I> (No duplicates)	List<I>(duplicates)	        Map<I>
 
-HashSet			ArrayList ( not thread safe)
-TreeSet			LinkedList (not synchronized, not thread safe)
-LinkedHashSet		Vector (synchronized, thread safe)
+HashSet(no order)			ArrayList ( not thread safe)
+TreeSet(sorted)		LinkedList (not synchronized, not thread safe)
+LinkedHashSet(As you insert)		Vector (synchronized, thread safe)
 
 No, LinkedList in Java is not synchronized. This means that it is not thread-safe by default.
 
@@ -817,13 +817,175 @@ public class Handson3 extends Thread{
 		Handson3 h = new Handson3();
 		h.start();
 		Scanner sc = new Scanner(System.in);
-		System.out.println("You have ten seconds to state your age: ");
+	System.out.println("You have ten seconds to state your age: ");
 		Integer n = sc.nextInt();
 		h.interrupt();
 	}
 
 }
 
+==============================
+
+
+Collection ( contd)
+
+
+public static void main(String[] args) {
+		List<Product> products = new ArrayList<Product>();
+		
+		Product product1 = new Product(1919, "Mouse", 900, 999, "Good");
+		products.add(product1);
+		products.add(new Product(8272, "Pen Drive", 99, 1, "Okay"));
+		products.add(new Product(85221, "Apple", 9799, 8, "Excellent"));
+		products.add(new Product(11212, "Laptop", 2399, 99, "Good"));
+		products.add(new Product(121, "Laptop", 2399, 9625, "Good"));
+		products.add(new Product(12121, "Laptop", 2399, 9, "Okay"));
+
+		
+		//to do
+		//print all product object one by one 
+		//using iterator
+
+		System.out.println(products);
+		Collections.sort(products);		
+		
+		System.out.println("After sorting");
+		
+		System.out.println(products);
+	}
+
+---------------------------------------
+Product.java
+package collectiondemos;
+
+import java.util.Objects;
+
+public class Product implements Comparable<Product>{
+
+	private int productId;
+	private String productName;
+	private int quantityOnHand;
+	private int price;
+	private String reviews;
+	
+	@Override
+	public int compareTo(Product o) {
+		// TODO Auto-generated method stub
+		if(o.getQuantityOnHand() > this.getQuantityOnHand())
+		{
+			return -1;
+		}
+		else if(o.getQuantityOnHand() == this.getQuantityOnHand())
+		{
+			if(o.getPrice() > this.getPrice())
+			{
+				return -1;
+			}
+			else
+			{
+				return 1;
+			}
+		}
+		else {
+			return 1;
+		}
+	}
+	
+	
+	public Product() {
+		// TODO Auto-generated constructor stub
+	}
+
+
+	public Product(int productId, String productName, int quantityOnHand, int price, String reviews) {
+		super();
+		this.productId = productId;
+		this.productName = productName;
+		this.quantityOnHand = quantityOnHand;
+		this.price = price;
+		this.reviews = reviews;
+	}
+
+
+	public int getProductId() {
+		return productId;
+	}
+
+
+	public void setProductId(int productId) {
+		this.productId = productId;
+	}
+
+
+	public String getProductName() {
+		return productName;
+	}
+
+
+	public void setProductName(String productName) {
+		this.productName = productName;
+	}
+
+
+	public int getQuantityOnHand() {
+		return quantityOnHand;
+	}
+
+
+	public void setQuantityOnHand(int quantityOnHand) {
+		this.quantityOnHand = quantityOnHand;
+	}
+
+
+	public int getPrice() {
+		return price;
+	}
+
+
+	public void setPrice(int price) {
+		this.price = price;
+	}
+
+
+	public String getReviews() {
+		return reviews;
+	}
+
+
+	public void setReviews(String reviews) {
+		this.reviews = reviews;
+	}
+
+
+	@Override
+	public String toString() {
+		return "\nProduct [productId=" + productId + ", productName=" + productName + ", quantityOnHand=" + quantityOnHand
+				+ ", price=" + price + ", reviews=" + reviews + "]";
+	}
+
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(price, productId, productName, quantityOnHand, reviews);
+	}
+
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Product other = (Product) obj;
+		return price == other.price && productId == other.productId && Objects.equals(productName, other.productName)
+				&& quantityOnHand == other.quantityOnHand && Objects.equals(reviews, other.reviews);
+	}
+
+
+
+}
 
 
 
