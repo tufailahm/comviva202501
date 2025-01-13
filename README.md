@@ -1086,7 +1086,7 @@ aside
 
 =======
 
-<a href="product.html" target="_blank">
+<a href="product.html" target="_blank">Open Product Page in new Tab</a>
 
 Javascript
 ==========
