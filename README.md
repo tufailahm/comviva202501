@@ -1021,6 +1021,87 @@ HashTable - sync and thread safe
 
 
 
+HTML
+========
+
+Hyper text mark up language
+
+tags
+
+<h1>Hi</h1>
+
+<br/>
+
+<body bgcolor="red" background="hello.jpg">
+</body>
+
+<font size="20">Comviva</font>  ** Deprecated  By CSS
+
+
+file:///E:/Trainings/2025/1.Comviva/comviva202501/productapp/saveProduct.html?productId=100&productName=Aroma&quantityOnHand=100&price=99
+
+
+
+file:///E:/Trainings/2025/1.Comviva/comviva202501/productapp/saveProduct.html?company=comviva
+
+NW :
+file:///E:/Trainings/2025/1.Comviva/comviva202501/productapp/saveProduct.html?	
+
+
+file:///E:/Trainings/2025/1.Comviva/comviva202501/productapp/saveProduct.html?productId=100&productName=Aroma&quantityOnHand=100&price=99
+
+file:///E:/Trainings/2025/1.Comviva/comviva202501/productapp/saveProduct.html?productId=100&productName=Aroma&quantityOnHand=100&price=99&gst=18
+
+
+file:///E:/Trainings/2025/1.Comviva/comviva202501/productapp/saveProduct.html?gst=21&productId=100&productName=Aroma&quantityOnHand=100&price=99	
+
+
+Use case : We want to include update functionality as well.
+
+HTML new tags
+
+Semantic tags
+section
+header
+footer
+aside
+
+
+
+===========
+
+
+	 <tr>
+                <td rowspan="3" valign="top">Email</td>
+                
+            </tr>
+            <tr>
+            </tr>
+            <tr>
+                <td rowspan="3" valign="bottom" >
+                    Official : rahul@dxc.com<br/>
+                    Personal : rahul@gmail.com
+                </td>
+            </tr>
+
+=======
+
+<a href="product.html" target="_blank">
+
+Javascript
+==========
+	client side
+	server sides
+
+Use case : We want to print Hello Comviva 100 times.
+
+
+
+
+
+
+
+
 
 
 
