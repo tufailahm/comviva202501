@@ -1270,13 +1270,35 @@ Validating using JS
     <select id="selectList" name="selectList">
       <option value="--">--</option>
       <option value="one">one</option>
-      <option value="two">two</option>
+      <option value="two">two< /option>
       <option value="three" selected="selected">three</option>
     </select>
   </form>
 </body>
 
 </html>
+
+Use case : Display error message in page itself.
+      <span id="errAdd">
+
+      </span>
+
+
+js
+      var err1 = document.getElementById('errAdd');
+
+         err1.innerHTML = '<font color=red>'+ inp1.value + ' Already present'
+
+Hands On : 
+
+EMI Calculator
+
+Loan Amount 		:	[ 7000000 ]Loan amount is mandatory
+Interest Rate		:	[  ]	Interest rate is mandatory
+Duration (in months)	:	[  ]	Duration is mandatory
+
+
+Your EMI is  : 1772  
 
 
 

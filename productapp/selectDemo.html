@@ -14,7 +14,18 @@
 
     function addSelOpt(inp1, sel1) {
       len1 = sel1.options.length;
+      var err1 = document.getElementById('errAdd');
+
       option0 = new Option(inp1.value,inp1.value);
+
+       for (i = 0; i < len1; i++) {
+        if (sel1.options[i].value == inp1.value) {
+         // alert("Already present")
+         err1.innerHTML = '<font color=red>'+ inp1.value + ' Already present'
+          return;
+        }
+      }
+      err1.innerHTML = '';
       sel1.options[len1] = option0;
     }  
   </script>
@@ -29,6 +40,9 @@
     enter what to enter:
     <input type=text name="removeOption" 
     onblur="addSelOpt(this,this.form.selectList)">
+      <span id="errAdd">
+
+      </span>
     <br>
     <select id="selectList" name="selectList">
       <option value="--">--</option>
