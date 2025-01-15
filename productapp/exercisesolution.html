@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function validateLoanAmount(){
+            var loanAmount = document.getElementById('loanAmount').value;
+
+
+            var lnMsg1 = document.getElementById('lnMsg1');
+
+            if(loanAmount.length == 0)
+            {
+                 lnMsg1.innerHTML = '<font color=red>Loan amount cannot be empty'
+            }
+            else
+            {
+                lnMsg1.innerHTML = ' '
+            }
+        } 
+
+        function validateRate(){
+            var rate = document.getElementById('rate').value;
+            var lnMsg2 = document.getElementById('lnMsg2');
+
+            if(rate.length == 0)
+            {
+                 lnMsg2.innerHTML = '<font color=red>Rate cannot be empty'
+            }
+            else
+            {
+                lnMsg2.innerHTML = ' '
+            }
+        } 
+        function validateDuration(){
+            var duration = document.getElementById('duration').value;
+            var lnMsg3 = document.getElementById('lnMsg3');
+
+            if(duration.length == 0)
+            {
+                 lnMsg3.innerHTML = '<font color=red>Duration cannot be empty'
+            }
+            else
+            {
+                lnMsg3.innerHTML = ' '
+                calculateEMI();
+            }
+        } 
+        function calculateEMI(){
+            //code here the formula to calculate EMI
+            document.getElementById('result').innerHTML = 'Your EMI is : 19191'
+        }
+    </script>
+</head>
+<body>
+    <form>
+        Loan Amount : <input type="text" id="loanAmount" 
+        onblur="validateLoanAmount()">
+        <span id="lnMsg1"></span>
+        <br/>
+        Interest rate : <input type="text" id="rate" onblur="validateRate()">
+        <span id="lnMsg2"></span>
+        <br/>
+        Duration : <input type="text" id="duration" onblur="validateDuration()">
+        <span id="lnMsg3"></span>
+        <br/>
+        <div id="result"></div>
+    </form>
+</body>
+</html>
