@@ -1438,6 +1438,44 @@ Guest 1 name [ ]
 
 Guest 56 name [ ]
 
+Soultion :
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script text="text/javascript">
+        function add() {
+            var counter = document.getElementById('counter').value;
+            var mainDiv = document.getElementById('myDiv1'); 
+            for (var i = 1; i <= counter; i++) {
+                var newLine = document.createElement('br');
+
+                var newTextBox = document.createElement('input');
+                newTextBox.type = 'text';
+                var newSpan = document.createElement('span');
+                newSpan.innerText = 'Guest '+i+ ' name';
+                mainDiv.appendChild(newLine);
+                mainDiv.appendChild(newSpan);
+                mainDiv.appendChild(newTextBox);
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div id="myDiv1">
+        <input type="text" id="counter">
+        <input id="Button1" type="button" value="Add A text Box" onclick="add()" />
+    </div>
+</body>
+
+</html>
+
+
 
 
 
