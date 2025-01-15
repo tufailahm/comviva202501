@@ -5,11 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script type="text/javascript">
-        for(i=1;i<=100;i++)
-            document.write("Hello Comviva<br/>");
+        function disp(num1,num2)
+        {
+            alert(num1.length)
+            alert(num2)
+        }
+
+        function display() {
+            alert();
+            alert("Hi")
+            var result = confirm("Are you sure");
+            var num1 = parseInt(prompt("Please enter first number :"));
+            var num2 = parseInt(prompt("Please enter second number :"));
+            alert(eval(num1+num2));
+            if (result){
+            for(i=1;i<=5;i++)
+            document.write("Hello Comviva "+guestName+"<br/>");
+            }
+            else
+            {
+                alert("Negative")
+            }
+        }
     </script>
 </head>
 <body>
-    <h2>Hello Comviva from HTML</h2>
+    <input type="button" onclick="display()" value="Display">
+
+    <input type="button" onclick="disp('OOPPA')" value="Disp">
+    <input type="button" onclick="disp(12)" value="Disp">
+    <input type="button" onclick="disp('KK')" value="Disp">
+    <input type="button" onclick="disp(2,2,2)" value="Disp">
+
 </body>
 </html>

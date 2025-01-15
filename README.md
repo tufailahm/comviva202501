@@ -1096,8 +1096,107 @@ Javascript
 Use case : We want to print Hello Comviva 100 times.
 
 
+Hands On : Accept two numbers and print the sum.
+NB : use parseInt method to parse string into numbers
+
+  function display() {
+            alert("Hi")
+            var result = confirm("Are you sure");
+            var guestName = prompt("Please enter your name :","Guest");
+            if (result){
+            for(i=1;i<=5;i++)
+            document.write("Hello Comviva "+guestName+"<br/>");
+            }
+            else
+            {
+                alert("Negative")
+            }
+        }
 
 
+============
+
+
+<script language="javascript">
+function display(num1,num2)
+{
+alert(display.length);
+}
+< /script>
+
+
+
+
+
+
+
+
+
+
+var str=“abc”;
+ or var str= new String(“abc”);
+
+boolean
+names = new Array("Mohan","Jay");
+
+-------Math
+r=Math.random();
+r between 0 and 1.
+X=Math.pow(8,3); //512
+
+
+Write a java script function to get a random number between 0 and 9?
+
+(10 mins)
+
+
+-------------------
+
+Constructors 
+Date() - Use the current date and time to create an instance of the object date. 
+today = new Date();
+Date(dateString) - Use the date specified by the string to create the instance of the date object. 
+d1 = new Date("July 10, 2010 11:13:00");
+Date(year, month, day) - Create an instance of date with the specified values. 
+Date(year, month, day, hours, minutes, seconds) - Create an instance of date with the specified values where month begins from 0.
+
+
+getDate()  
+  getMonth() 0 indicating Jan
+ getYear() 
+ getDay()weekday 0 indicating Sunday
+ getHours() getMinutes()   getSeconds() 
+setDate(value)     setMonth(value) setYear(value)     setHours(value) setMinutes(value)  setSeconds(value) setFullYear(yy,mm,dd)
+parse(string)
+
+
+<html><body>
+<script>
+var today= new Date();		//15th Jan 2025
+var lastdate=new Date();	// 15th Jan 2025
+lastdate.setFullYear(2025,0,31);//31stJan 2025
+if (lastdate>today)  {
+	var day = 1000 * 60 * 60 * 24;
+	x=(lastdate-today)/day;
+  alert("Number of days left "+x);
+  }
+else  {
+  alert("time up and you cannot apply for quiz");
+  }
+</script></body></html>
+
+
+---------
+
+The electricity bill has to be paid before the 15th of every month. Write java script code that will prompt the user to enter the bill number and credit card number (assume that the site has secure payment gateway). 
+
+If the date user pays the bill beyond 10th but before end of the month, then a fine of Rs. 50 is added for each delayed day. Compute the final bill and pop up the result to the user.
+
+15th Jan --------
+Enter the bill amount : 8700
+Either : Your total bill is : 8700	- 09th Jan 
+Or : Your total bill after late fees is : 8950 	- 15th Jan
+(15 mins)
 
 
 

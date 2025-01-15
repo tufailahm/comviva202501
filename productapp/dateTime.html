@@ -1,0 +1,15 @@
+
+<html><body>
+    <script>
+    var today= new Date();		//15th Jan 2025
+    var lastdate=new Date();	// 15th Jan 2025
+    lastdate.setFullYear(2025,0,31);//31stJan 2025
+    if (lastdate>today)  {
+        var day = 1000 * 60 * 60 * 24;
+        x=(lastdate-today)/day;
+      alert("Number of days left "+x);
+      }
+    else  {
+      alert("time up and you cannot apply for quiz");
+      }
+    </script></body></html>
