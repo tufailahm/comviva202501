@@ -1,15 +1,17 @@
 
 <html><body>
     <script>
+    var billAmount = parseInt(prompt("Enter the billAmount :"));
     var today= new Date();		//15th Jan 2025
-    var lastdate=new Date();	// 15th Jan 2025
-    lastdate.setFullYear(2025,0,31);//31stJan 2025
-    if (lastdate>today)  {
-        var day = 1000 * 60 * 60 * 24;
-        x=(lastdate-today)/day;
-      alert("Number of days left "+x);
-      }
+    var lastdate=new Date(2025,0,10);	// 15th Jan 2025
+    //lastdate.setFullYear(2025,0,10);//10th Jan 2025
+    if (today>lastdate)  {
+        var currentDay = today.getDate();
+        var lateDays = currentDay - 10;
+        billAmount = billAmount + (lateDays *50);
+        alert("Your total bill after late fee is : "+billAmount);
+    }
     else  {
-      alert("time up and you cannot apply for quiz");
+      alert("Your total bill is : "+billAmount);
       }
     </script></body></html>

@@ -1199,8 +1199,84 @@ Or : Your total bill after late fees is : 8950 	- 15th Jan
 (15 mins)
 
 
+===================
 
 
+Use case : Change image upon hovering
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+        function change(img){
+            document.images[0].src = img;
+        }
+    </script>
+</head>
+<body>
+    <img src="openeyes.jfif" 
+    onmouseover="change('closeyes.jfif')" 
+    onmouseout="change('openeyes.jfif')">
+</body>
+</html>
+
+========================
+
+
+Validating using JS
+
+** All the fields are mandatory
+** price and qoh should be negative
+
+
+
+==========
+
+<html>
+
+<head>
+  <script type="text/javascript">
+    function remSelOpt(inp1, sel1) {
+      len1 = sel1.options.length;
+      for (i = 0; i < len1; i++) {
+        if (sel1.options[i].value == inp1.value) {
+          sel1.options[i] = null;
+          break;
+        }
+      }
+    }
+
+    function addSelOpt(inp1, sel1) {
+      len1 = sel1.options.length;
+      option0 = new Option(inp1.value,inp1.value);
+      sel1.options[len1] = option0;
+    }  
+  </script>
+</head>
+
+<body>
+  <form>
+    Enter what to del:
+    <input type=text name="removeOption" onblur="remSelOpt
+(this,this.form.selectList)">
+    <br>
+    enter what to enter:
+    <input type=text name="removeOption" 
+    onblur="addSelOpt(this,this.form.selectList)">
+    <br>
+    <select id="selectList" name="selectList">
+      <option value="--">--</option>
+      <option value="one">one</option>
+      <option value="two">two</option>
+      <option value="three" selected="selected">three</option>
+    </select>
+  </form>
+</body>
+
+</html>
 
 
 
