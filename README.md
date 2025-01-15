@@ -1392,16 +1392,51 @@ red < Invalid age >
 
 Dynamic adding controls
 ====================
-1) You create and show and hide game
+Code :
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+        function add(){
+            var mainDiv = document.getElementById('myDiv1'); 
+            var newTextBox = document.createElement('input');
+            newTextBox.type = 'text';
+            newTextBox.id = 'productId';
+
+            var productIdSpan = document.createElement('span');
+            productIdSpan.innerText = 'Product Id ';
+            mainDiv.appendChild(productIdSpan);
+            mainDiv.appendChild(newTextBox);
+        }
+    </script>
+</head>
+<body>
+    <div id="myDiv1">
+        <input id="Button1" 
+        type="button" value="Add A text Box" 
+        onclick="add()" />
+    </div>
+</body>
+
+</html>
+
+
+
+Hands On : 
 
 Add Guests : [ 56 ]
+[Add TextBoxes] - Button 
 
 Guest 1 name [ ]
 ...
 ..
 ..
 
-Guest 5 name [ ]
+Guest 56 name [ ]
 
 
 
