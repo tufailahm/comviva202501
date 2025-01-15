@@ -1378,4 +1378,52 @@ Solution :
 
 
 
+============================================
+Hands on : 
+Input Age  to check user eligibility to vote : 	[ 21 ]
+					< 18
+Green < You are eligible to vote>
+
+Yellow < You are not eligible to vote >
+
+-2 or > 100
+
+red < Invalid age > 
+
+Dynamic adding controls
+====================
+1) You create and show and hide game
+
+Add Guests : [ 56 ]
+
+Guest 1 name [ ]
+...
+..
+..
+
+Guest 5 name [ ]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

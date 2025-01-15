@@ -6,14 +6,12 @@
     <title>Document</title>
     <script>
         function validateLoanAmount(){
-            var loanAmount = document.getElementById('loanAmount').value;
-
-
+            var loanAmount = document.getElementById('loanAmount');
             var lnMsg1 = document.getElementById('lnMsg1');
-
-            if(loanAmount.length == 0)
+            if(loanAmount.value.length == 0)
             {
                  lnMsg1.innerHTML = '<font color=red>Loan amount cannot be empty'
+                    loanAmount.focus();
             }
             else
             {
