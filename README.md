@@ -1475,28 +1475,51 @@ Soultion :
 
 </html>
 
+=========================
+Working code 
+<br/>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script text="text/javascript">
+        function check(){
+            var counter = document.getElementById('counter');
+            if (localStorage.mycounter) {
+                counter.value = localStorage.getItem('mycounter')
+            }
+        }
+        function add() {
+            var counter = document.getElementById('counter');
+            var mainDiv = document.getElementById('myDiv1');
+            localStorage.setItem('mycounter', counter.value);
+
+            for (var i = 1; i <= counter.value; i++) {
+                var newLine = document.createElement('br');
+
+                var newTextBox = document.createElement('input');
 
 
 
+                newTextBox.type = 'text';
+                var newSpan = document.createElement('span');
+                newSpan.innerText = 'Guest ' + i + ' name';
+                mainDiv.appendChild(newLine);
+                mainDiv.appendChild(newSpan);
+                mainDiv.appendChild(newTextBox);
+            }
+        }
+    </script>
+</head>
 
+<body onload="check()">
+    <div id="myDiv1">
+        <input type="text" id="counter">
+        <input id="Button1" type="button" value="Add A text Box" onclick="add()" />
+    </div>
+</body>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+</html>

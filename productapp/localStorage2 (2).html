@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function store() {
+	var uname = document.getElementById("uname");
+    if(typeof(Storage) !== "undefined") 
+	{	
+        if (localStorage.currentuser) 
+	{
+        alert("currentUser is there")
+
+            document.f1.uname.value = localStorage.getItem("currentuser");
+	 } 
+	else 
+	{
+           localStorage.setItem("currentuser",uname.value);
+        }
+    } 
+}
+</script>
+</head>
+<body onload="store()">
+<form name="f1">
+User name :<input type="text" id="uname" name="uname">
+<p><button onclick="store()" type="button">Click me!</button></p>
+</form>
+</body>
+</html>
