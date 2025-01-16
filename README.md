@@ -1604,6 +1604,148 @@ Next page : HTML
 
 index.html 	->	GuestController	--> product.html
 
+product.html
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+    <link type="text/css" href="styles.css" rel="stylesheet" />
+
+</head>
+
+<body bgcolor="yellow">
+    <h2 class="btncenter highlight">Add Product</h2>
+    <form action="saveProduct.html" method="get">
+        <table cellspacing="10" border="0">
+            <input type="hidden" name="gst" value="21">
+            <input type="hidden" name="author" value="Tufail">
+            <!-- Product Id-->
+            <tr>
+                <td><label id="productLabelId">Product Id </label></td>
+                <td>
+                    <input type="text" name="productId" id="productId" required pattern="^P[0-9][0-9][8]$">
+                </td>
+            </tr>
+
+            <!-- Product Name-->
+            <tr>
+                <td><label id="productLabelName">Product Name </label></td>
+                <td><input type="text" name="productName" id="productName"></td>
+            </tr>
+            <!-- QOH-->
+            <tr>
+                <td><label id="qohLabel">Quantity On Hand</label></td>
+                <td><input type="text" id="quantityOnHand" name="quantityOnHand" max="1000"></td>
+            </tr>
+
+            <!-- QOH-->
+            <tr>
+                <td><label id="priceLabel">Price</label></td>
+                <td><input type="number" id="price" name="price" min="0"></td>
+
+            </tr>
+
+            <tr>
+                <td colspan="2" class="btncenter highlight"><input type="submit" value="Add">
+                    <input type="submit" value="Update" formaction="updateProduct.html">
+                    <input type="submit" value="Delete">
+                </td>
+            <tr>
+            <tr>
+                <td colspan="2" class="btncenter highlight"><input type="reset" value="Clear"></td>
+            </tr>
+
+            <tr>
+                <td rowspan="3" valign="top">Email</td>
+                
+            </tr>
+            <tr>
+                
+            </tr>
+            <tr>
+           
+                <td rowspan="3" valign="bottom" >
+                    Official : rahul@dxc.com<br/>
+                    Personal : rahul@gmail.com
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+
+</html>
+
+
+
+styles.css
+
+h2 {
+    color: blue;
+}
+
+body {
+    background-color: cadetblue;
+}
+
+table {
+    border: 1px solid black;
+    width: 100%;
+    height: 50%;
+    vertical-align: bottom;
+    padding: 5px;
+}
+
+
+
+td.btncenter,h2.btncenter {
+    text-align: center;
+}
+
+.highlight {
+    background-color: rgb(100, 60, 0);
+}
+
+
+
+
+
+A:link {
+    color: yellow
+}
+
+A:visited {
+    color: blue;
+}
+
+A:hover {
+    color: red;
+}
+
+div {
+    width: 300px;
+    border: 15px solid green;
+    padding: 50px;
+    margin: 20px;
+}
+
+
+input
+{
+    text-align: center;
+    color: limegreen;
+}
+
+input#productId
+{
+    text-align: right;
+    color: red;
+}
+
+
 
 
 
