@@ -39,21 +39,21 @@ public class LoginController extends HttpServlet {
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
 		response.setContentType("text/html");
-		response.getWriter().println("<h2>Welcome in Comviva App");
+		response.getWriter().println("<h2>Welcome  "+ username+ " in Comviva App");
 		//validation 
 		if(username.startsWith("A"))
 		{
 			//*** 
-			RequestDispatcher  dispatcher = 
-					request.getRequestDispatcher("/HomeController");
+			//RequestDispatcher  dispatcher = 
+			//		request.getRequestDispatcher("/HomeController");
 			//dispatcher.forward(request, response);
-			dispatcher.include(request, response);
-
-			//response.getWriter().print("<a href=HomeController>Home page</a>");
+			//dispatcher.include(request, response);
+			response.getWriter().print("<a href=HomeController>Home page</a>");
 		}
 		else
 		{
-				response.getWriter().println("<h2>Invalid Username/password  <br/><br/><a href=index.html>Try Again</a>");
+				response.getWriter().println
+	("<h2>Invalid Username/password  <br/><br/><a href=index.html>Try Again</a>");
 		}
 	}
 }

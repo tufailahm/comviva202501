@@ -28,7 +28,9 @@ public class HomeController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().print("WELCOME , Home Page -- DO GET");
+		String username = request.getParameter("username");
+
+		response.getWriter().print("WELCOME , "+username+ " Home Page -- DO GET");
 	}
 
 	/**
@@ -36,7 +38,9 @@ public class HomeController extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().print("WELCOME , Home Page -- DO POST");
+		String username = request.getParameter("username");
+
+		response.getWriter().print("WELCOME ,"+ username+"   Home Page -- DO POST");
 	}
 
 }
