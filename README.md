@@ -1594,15 +1594,17 @@ init()
 service(HttpServletRequest request,
 			HttpServletResponse response)
 	
-destory()
+destroy()
 
 
 
 
 Use case : Present a web page to capture product details.
-Next page : HTML 
+Next page : HTML
 
-index.html 	->	GuestController	--> product.html
+index.html ->GuestController	--> product.html
+
+
 
 product.html
 
@@ -1746,6 +1748,45 @@ input#productId
 }
 
 
+Use case : Capture the product information and confirm from user
+
+index.html ->GuestController	--> product.html --> ProductController.java
+				P998
+				Boat
+
+			<Submit>
+
+
+
+
+
+================
+Hands on 
+
+
+
+
+
+
+
+
+Upcoming topics
+===============
+
+RequestDispatcher
+Session Mechanism
+	Cookie 
+ 	Url-rewriting 
+ 	Hidden Form Fields
+	HttpSession
+
+** Filtering is not session mechanism method
+Error code - 500
+
+Get vs Post 
+
+
+================
 
 
 
@@ -1755,6 +1796,30 @@ input#productId
 
 
 
+colors.html
+===========
 
 
+<html>
+<body>
+<form method="POST" action="ProcessForm">
+Name: <input type="text" name="uname">
+<p>Select Colors:<br>
+<input type="checkbox" name="color" value=“Red"> 
+Red <br> 
+<input type="checkbox" name="color" value="Green"> Green<br>
+<input type="checkbox" name="color" value="Blue">
+Blue</p>
+<p><input type="submit" value="Submit" name="B1">
+<input type="reset" value="Reset" name="B2"></p>
+</form>
+</body>
+</html>
 
+
+Reference :
+		String colors[] = request.getParameterValues("color");
+
+	for(String s:colors) {
+			response.getWriter().println("<h2>"+s);
+		}

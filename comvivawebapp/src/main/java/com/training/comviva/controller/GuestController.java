@@ -45,7 +45,8 @@ public class GuestController extends HttpServlet {
 	 *      response)
 	 */
 	int counter;
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+	protected void doGet(HttpServletRequest request,
+			HttpServletResponse response)
 			throws ServletException, IOException {
 		System.out.println("DO GET CALLED");
 		counter++;
@@ -55,7 +56,6 @@ public class GuestController extends HttpServlet {
 		response.getWriter().println("<h2>Welcome Guest");
 		response.getWriter().println("<h2>You are visitor number : " + counter);
 		response.getWriter().println("<h2><a href=product.html>Product App</a>");
-
 		response.getWriter().println("</body></html>");
 	}
 
