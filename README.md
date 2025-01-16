@@ -1523,3 +1523,96 @@ Working code
 </body>
 
 </html>
+
+
+===============
+6th Day
+09:26 16-01-2025
+
+J2SE	- core java
+J2EE	- enterprise edition ( EE, server side app, ejb, jsp, servlets)
+J2ME	- micro edition 
+
+What is Servlet ?
+
+A servlet is a Java class that extends the capabilities of a server. It's often used to add dynamic content to web servers
+
+** How it works 
+A servlet container loads and instantiates a servlet
+The servlet is initialized using the init() method
+The servlet processes client requests using the service() method
+The servlet is finalized using the destroy() method
+The servlet's memory is garbage collected
+
+
+
+
+Create
+Compile
+R	un
+Deploy our app in web server (tomcat)
+
+
+Use case : We want to create a server side app to welcome user with a message alongwith the the visitor counter.
+
+
+
+
+Page 1 :
+Hello and Welcome.
+Click here to proceed
+http://localhost:9090/comvivawebapp/
+
+Page 2: GuestController
+Welcome Guest
+You are visitor number : 1
+
+<a href="comviva">Go</a>
+
+public class HelloController extends HttpServlet
+{
+	int counter;
+	public void doGet(HttpServletRequest request,
+			HttpServletResponse response) throws IO,Ser
+	{
+		counter++;
+		response.setContentType("text/html");
+		response.getWriter().println("<html>");
+		response.getWriter().println("<body>");
+		response.getWriter().println("<h2>Welcome Guest");
+response.getWriter().println("<h2>You are visitor number : "+counter );
+
+	}
+}
+
+
+** Lifecycle of servlet
+----------------------------
+
+
+init()
+service(HttpServletRequest request,
+			HttpServletResponse response)
+	
+destory()
+
+
+
+
+Use case : Present a web page to capture product details.
+Next page : HTML 
+
+index.html 	->	GuestController	--> product.html
+
+
+
+
+
+
+
+
+
+
+
+
+

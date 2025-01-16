@@ -6,16 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script text="text/javascript">
-        function check(){
+        function check() {
             var counter = document.getElementById('counter');
+            var language = document.getElementById('language');
+            if (localStorage.lang) {
+                language.value = localStorage.getItem('lang')
+            }
             if (localStorage.mycounter) {
                 counter.value = localStorage.getItem('mycounter')
             }
         }
         function add() {
             var counter = document.getElementById('counter');
+            var language = document.getElementById('language');
             var mainDiv = document.getElementById('myDiv1');
             localStorage.setItem('mycounter', counter.value);
+            localStorage.setItem('lang', language.value);
 
             for (var i = 1; i <= counter.value; i++) {
                 var newLine = document.createElement('br');
@@ -38,6 +44,8 @@
 <body onload="check()">
     <div id="myDiv1">
         <input type="text" id="counter">
+        Language Preference : <input type="text" id="language">
+
         <input id="Button1" type="button" value="Add A text Box" onclick="add()" />
     </div>
 </body>

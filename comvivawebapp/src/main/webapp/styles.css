@@ -1,0 +1,61 @@
+h2 {
+    color: blue;
+}
+
+body {
+    background-color: cadetblue;
+}
+
+table {
+    border: 1px solid black;
+    width: 100%;
+    height: 50%;
+    vertical-align: bottom;
+    padding: 5px;
+}
+
+
+
+td.btncenter,h2.btncenter {
+    text-align: center;
+}
+
+.highlight {
+    background-color: rgb(100, 60, 0);
+}
+
+
+
+
+
+A:link {
+    color: yellow
+}
+
+A:visited {
+    color: blue;
+}
+
+A:hover {
+    color: red;
+}
+
+div {
+    width: 300px;
+    border: 15px solid green;
+    padding: 50px;
+    margin: 20px;
+}
+
+
+input
+{
+    text-align: center;
+    color: limegreen;
+}
+
+input#productId
+{
+    text-align: right;
+    color: red;
+}
