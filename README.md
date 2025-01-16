@@ -1783,7 +1783,7 @@ Session Mechanism
 ** Filtering is not session mechanism method
 Error code - 500
 
-Get vs Post 
+
 
 
 ================
@@ -1823,3 +1823,63 @@ Reference :
 	for(String s:colors) {
 			response.getWriter().println("<h2>"+s);
 		}
+
+
+Get vs Post 
+
+POST requests are never cached
+POST requests do not remain in the browser history
+POST requests cannot be bookmarked
+POST requests have no restrictions on data length
+POST requests data goes in body
+
+
+<a href="ProcessForm">ProcessForm</a>
+
+
+Additional Hands on :
+
+Implement a basic calculator application by getting the two operands and one operator from the form in a textbox. 
+Also have a button called result and when the same is clicked display the result. 
+
+Only the result part of the page must change
+
+
+=========================
+
+RequestDispatcher
+
+
+The RequestDispatcher interface provides the facility of dispatching the request to another resource it may be html, servlet or jsp. This interface can also be used to include the content of another resource also. It is one of the way of servlet collaboration.
+
+There are two methods defined in the RequestDispatcher interface.
+
+
+Methods of RequestDispatcher interface
+The RequestDispatcher interface provides two methods. They are:
+
+public void forward(ServletRequest request,ServletResponse response)throws ServletException,java.io.IOException:Forwards a request from a servlet to another resource (servlet, JSP file, or HTML file) on the server.
+public void include(ServletRequest request,ServletResponse response)throws ServletException,java.io.IOException:Includes the content of a resource (servlet, JSP page, or HTML file) in the response.
+
+
+
+GuestController.java
+
+response.getWriter().println("<h2><a href=login.html>Login</a>");
+
+
+
+login.html
+
+
+
+
+
+
+
+
+
+
+
+
+

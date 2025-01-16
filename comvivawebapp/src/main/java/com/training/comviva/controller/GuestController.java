@@ -55,6 +55,8 @@ public class GuestController extends HttpServlet {
 		response.getWriter().println("<body>");
 		response.getWriter().println("<h2>Welcome Guest");
 		response.getWriter().println("<h2>You are visitor number : " + counter);
+		response.getWriter().println("<h2><a href=login.html>Login</a>");
+
 		response.getWriter().println("<h2><a href=product.html>Product App</a>");
 		response.getWriter().println("</body></html>");
 	}
