@@ -2539,15 +2539,12 @@ Step 3: create viewProduct.jsp
 </head>
 <body>
 <jsp:useBean 
-		id="product" 	<%-- Product product = new Product() --%>
-		scope="session" <%-- session.setAttribute("product"); --%>
+		id="product" 	
+		scope="session" 
 		class="com.training.comviva.model.Product" >
 
 <jsp:setProperty property="productId" name="product" param="productId"/>
-<%-- 
-int productId = Integer.parseInt(request.getParameter("productId"); 
-product.setProductId(productId);
---%>
+
 <jsp:setProperty property="productName" name="product" param="productName"/>
 <jsp:setProperty property="quantityOnHand" name="product" param="quantityOnHand"/>
 <jsp:setProperty property="price" name="product" param="price"/>
