@@ -7,6 +7,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  * Servlet implementation class ProductController
@@ -48,6 +49,8 @@ public class ProductController extends HttpServlet {
 		
 		String colors[] = request.getParameterValues("color");
 		
+		HttpSession session = request.getSession();
+		session.setAttribute("pname", productName);
 		
 		response.setContentType("text/html");
 		response.getWriter().println("<html>");
@@ -59,6 +62,8 @@ public class ProductController extends HttpServlet {
 		response.getWriter().println("<h2>Product Price : " + price);
 		response.getWriter().println("<h2><br/><br/><br/>Please check and confirm ::");
 		
+		response.getWriter().println("<h2><br/><br/><br/><a href=index.html>Home</a>");
+
 		for(String s:colors) {
 			response.getWriter().println("<h2>"+s);
 		}

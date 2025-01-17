@@ -1774,11 +1774,7 @@ Upcoming topics
 ===============
 
 RequestDispatcher
-Session Mechanism
-	Cookie 
- 	Url-rewriting 
- 	Hidden Form Fields
-	HttpSession
+
 
 ** Filtering is not a session mechanism method
 Error code - 500
@@ -1979,6 +1975,63 @@ login.html
 
 
 LoginController.java
+
+
+
+
+
+
+
+
+
+
+
+Session Mechanism
+	Cookie 
+ 	Url-rewriting 
+ 	Hidden Form Fields
+	HttpSession
+
+
+Url-rewriting 
+ Hidden Form Fields
+
+login.html	--> LoginController		-->HomeController
+
+				request.getParameter("username");
+
+		<input type="hidden" name="username" value="ii">
+
+Url-rewriting 
+
+	<a href="HomeController?username=isha">
+
+
+HttpSession 
+==============
+
+HttpServletRequest request
+
+HttpSession session = request.getSession();	***
+session.setAttribute("currentUser", username);
+
+
+
+HttpSession session = request.getSession();
+String temp = (String)session.getAttribute("currentUser");
+
+
+session.invalidate();
+
+Cookies
+============
+
+Use case : When a user visits our website for the first time, we want to greet 
+Welcome first time visitor, but he/she visits again.
+
+Welcome Anu,
+
+Welcome Back Anu,
 
 
 

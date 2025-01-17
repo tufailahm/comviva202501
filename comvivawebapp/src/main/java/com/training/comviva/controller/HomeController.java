@@ -6,6 +6,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  * Servlet implementation class HomeController
@@ -28,9 +29,10 @@ public class HomeController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		String username = request.getParameter("username");
-
-		response.getWriter().print("WELCOME , "+username+ " Home Page -- DO GET");
+		HttpSession session = request.getSession();
+		String temp = (String)session.getAttribute("pname");
+		String username = (String)session.getAttribute("currentUser");
+		response.getWriter().print("WELCOME , "+username+ " Home Page -- DO GET"+ " You have selected product :"+temp);
 	}
 
 	/**
