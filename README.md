@@ -2126,6 +2126,12 @@ If the data is valid, display "Congrats your details saved successfully"
 
 
 
+
+
+
+
+
+
 login.jsp
 
 <!DOCTYPE html>
@@ -2322,8 +2328,249 @@ print.jsp
 
 
 
+JSP lifecycle: Translation, compilation, execution
+===================================
+
+jspInit
+jspService
+jspDestroy
+
+Stages of lifecycle
 
 
+ Translation --> JSP --> Servlet
+Servlet --> Compilation
+Execution
+
+
+
+Tag libraries in JSP: jsp:useBean, jsp:setProperty, jsp:getProperty
+=============================================
+Bean
+
+
+Model class with setters and getters - Reusable class - Bean class
+
+Use case : User should input product details and we need to print product details in the checkout page.
+
+
+product.html	--> viewProduct.jsp			CheckoutController.java
+
+			
+Step 1:
+
+Create Product.java
+
+package com.training.comviva.model;
+
+//Java Bean
+public class Product {
+
+	private int productId;
+	private String productName;
+	private int quantityOnHand;
+	private int price;
+	
+	
+	public Product() {
+		// TODO Auto-generated constructor stub
+	}
+
+
+	public Product(int productId, String productName, int quantityOnHand, int price) {
+		super();
+		this.productId = productId;
+		this.productName = productName;
+		this.quantityOnHand = quantityOnHand;
+		this.price = price;
+	}
+
+
+	public int getProductId() {
+		return productId;
+	}
+
+
+	public void setProductId(int productId) {
+		this.productId = productId;
+	}
+
+
+	public String getProductName() {
+		return productName;
+	}
+
+
+	public void setProductName(String productName) {
+		this.productName = productName;
+	}
+
+
+	public int getQuantityOnHand() {
+		return quantityOnHand;
+	}
+
+
+	public void setQuantityOnHand(int quantityOnHand) {
+		this.quantityOnHand = quantityOnHand;
+	}
+
+
+	public int getPrice() {
+		return price;
+	}
+
+
+	public void setPrice(int price) {
+		this.price = price;
+	}
+
+
+	@Override
+	public String toString() {
+		return "Product [productId=" + productId + ", productName=" + productName + ", quantityOnHand=" + quantityOnHand
+				+ ", price=" + price + "]";
+	}
+
+}
+
+
+Step 2: Create Product.html
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+<title>Document</title>
+<link type="text/css" href="styles.css" rel="stylesheet" />
+
+</head>
+
+<body bgcolor="yellow">
+	<h2 class="btncenter highlight">Add Product</h2>
+	<form action="ProductController" method="get">
+		<table cellspacing="10" border="0">
+			<input type="hidden" name="gst" value="21">
+			<input type="hidden" name="author" value="Tufail">
+			<!-- Product Id-->
+			<tr>
+				<td><label id="productLabelId">Product Id </label></td>
+				<td><input type="text" name="productId" id="productId" required>
+				</td>
+			</tr>
+
+			<!-- Product Name-->
+			<tr>
+				<td><label id="productLabelName">Product Name </label></td>
+				<td><input type="text" name="productName" id="productName"></td>
+			</tr>
+			<!-- QOH-->
+			<tr>
+				<td><label id="qohLabel">Quantity On Hand</label></td>
+				<td><input type="text" id="quantityOnHand"
+					name="quantityOnHand" max="1000"></td>
+			</tr>
+
+			<!-- QOH-->
+			<tr>
+				<td><label id="priceLabel">Price</label></td>
+				<td><input type="number" id="price" name="price" min="0"></td>
+
+			</tr>
+
+			<tr>
+				<td>
+					<p>
+						Select Colors:<br>
+						 <input type="checkbox" name="color"
+							value="Red"> Red <br> 
+							<input type="checkbox"
+							name="color" value="Green"> Green<br>
+							 <input
+							type="checkbox" name="color" value="Blue"> Blue
+					</p>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2" class="btncenter highlight"><input
+					type="submit" value="Add"> 
+					<input type="submit"
+					value="View" formaction="viewProduct.jsp"> <input
+					type="submit" value="Delete"></td>
+			<tr>
+			<tr>
+				<td colspan="2" class="btncenter highlight"><input type="reset"
+					value="Clear"></td>
+			</tr>
+
+			<tr>
+				<td rowspan="3" valign="top">Email</td>
+
+			</tr>
+			<tr>
+
+			</tr>
+			<tr>
+
+				<td rowspan="3" valign="bottom">Official : rahul@dxc.com<br />
+					Personal : rahul@gmail.com
+				</td>
+			</tr>
+		</table>
+	</form>
+</body>
+
+</html>
+
+
+Step 3: create viewProduct.jsp 
+
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<jsp:useBean 
+		id="product" 	<%-- Product product = new Product() --%>
+		scope="session" <%-- session.setAttribute("product"); --%>
+		class="com.training.comviva.model.Product" >
+
+<jsp:setProperty property="productId" name="product" param="productId"/>
+<%-- 
+int productId = Integer.parseInt(request.getParameter("productId"); 
+product.setProductId(productId);
+--%>
+<jsp:setProperty property="productName" name="product" param="productName"/>
+<jsp:setProperty property="quantityOnHand" name="product" param="quantityOnHand"/>
+<jsp:setProperty property="price" name="product" param="price"/>
+
+</jsp:useBean>
+
+<h2>Your product is saved with Us.. Checkout for billing</h2>
+
+<a href="CheckoutControlller">Checkout</a>
+</body>
+</html>
+
+
+
+Step 4: Create CheckoutController.java
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		HttpSession session = request.getSession();
+		response.setContentType("text/html");
+		
+		response.getWriter().println("<h2>Your selected product details are :");
+		response.getWriter().println(session.getAttribute("product"));
+	}
 
 
 

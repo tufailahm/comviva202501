@@ -83,7 +83,7 @@ input[type="text"]:focus, input[type="password"]:focus {
 </head>
 <body>
 
-
+<h2>Comviva Login page</h2>
 <% 
 	String username = (String)session.getAttribute("uname");
 	String errusername = (String)session.getAttribute("erruname");
