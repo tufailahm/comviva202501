@@ -2062,6 +2062,21 @@ config
 context
 session
 
+
+JSP implicit variables and Objects
+---------------------------------------
+request: An instance of HttpServletRequest
+response: An instance of HttpServletResponse
+out: An instance of JspWriter
+session: An instance of HttpSession
+config: An instance of ServletConfig
+application: An instance of ServletContext
+page: An instance of Object
+pageContext: An instance of PageContext
+exception: An instance of Throwable
+
+
+
 Servlet - Logic
 JSP - Views
 
@@ -2074,6 +2089,249 @@ HTML		Servlet			--> JSP
 <%	%>	- Scriplet
 <%!	%>	- Declaration
 <%= 	%>	- Expressions - print
+<%-- 	%>	- JSP Comments
+
+
+
+
+Create a JSP that displays 2 text boxes. Accept two numbers and print the addition, subtraction, multiplication and division of those numbers.
+ ( 15 Mins)
+
+
+Directives
+
+JSP 
+page directives
+include directives
+taglib directives
+
+
+
+JSTL - Java Standard Tag Libraries
+==========================
+
+core tags - dont need scriplet to write java code
+
+
+
+
+Display a JSP registration form that requests the user to enter user’s name, email id, city, phone number. 
+On submitting the form, a servlet must validate the data. In case the data is invalid, the JSP page must be displayed again indicating the error fields. This time the registration form must be prefilled with the data that user has entered previously. 
+If the data is valid, display "Congrats your details saved successfully"
+
+** All fields are mandatory
+** phone number should be 10 digits
+** city should only be Bangalore and Gurgaon
+
+
+
+
+login.jsp
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login Page</title>
+<style>
+body {
+	font-family: Arial, sans-serif;
+	background-color: #f2f2f2;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	margin: 0;
+}
+
+.login-container {
+	background-color: #fff;
+	padding: 30px;
+	border-radius: 8px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	width: 300px;
+}
+
+h2 {
+	text-align: center;
+	color: #333;
+}
+
+.form-group {
+	margin-bottom: 20px;
+}
+
+label {
+	display: block;
+	font-weight: bold;
+	margin-bottom: 5px;
+}
+
+input[type="text"], input[type="password"] {
+	width: 100%;
+	padding: 10px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	font-size: 16px;
+}
+
+input[type="text"]:focus, input[type="password"]:focus {
+	border-color: #007bff;
+	outline: none;
+}
+
+.btn-login {
+	width: 100%;
+	padding: 10px;
+	background-color: #007bff;
+	color: white;
+	font-size: 16px;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+.btn-login:hover {
+	background-color: #0056b3;
+}
+
+.forgot-password {
+	text-align: center;
+	margin-top: 10px;
+}
+
+.forgot-password a {
+	text-decoration: none;
+	color: #007bff;
+}
+
+.forgot-password a:hover {
+	text-decoration: underline;
+}
+</style>
+</head>
+<body>
+
+
+<% 
+	String username = (String)session.getAttribute("uname");
+	String errusername = (String)session.getAttribute("erruname");
+	if(username==null)
+		username="";
+	if(errusername==null)
+		errusername="";
+	%>
+	<div class="login-container">
+		<h2>Login</h2>
+		<form action="LoginController" method="POST">
+			<div class="form-group">
+				<label for="username">Username</label> <input type="text"
+					id="username" name="username" value="<%= username %>"
+					   >
+					   <font color="red"><%= errusername %></font>
+			</div>
+			<div class="form-group">
+				<label for="password">Password</label> <input type="password"
+					id="password" name="password" required>
+			</div>
+			<button type="submit" class="btn-login">Login</button>
+			<input  type="submit" class="btn-login" formaction="print.jsp">Print</button>
+
+		</form>
+		<div class="forgot-password">
+			<a href="#">Forgot Password?</a>
+		</div>
+	</div>
+
+</body>
+</html>
+
+
+
+print.jsp
+
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"
+	%>
+	<%@ taglib uri="http://java.sun.com/jstl/core" prefix="c" %>
+	
+<%@ include file="company.jsp" %>
+<%@ page import="java.util.Date,java.util.*" %>
+<!DOCTYPE html>
+<html>
+<body>
+	<%
+	for (int i = 1; i <= 3; i++) 
+	{
+	%>
+		out.println(i);
+	<%
+	}
+	%>
+	<h2>Printing your name</h2>
+	<%!int num1 = 100;
+	String name = "Piyush";
+
+	public String getMessage(int n1, int n2) {
+		return n1 + n2 + "Hello Comviva";
+	}%>
+
+	<%=getMessage(12, 12)%>
+	<%
+	String un = request.getParameter("username");
+	session.setAttribute("uname", un);
+	if(un.length()==0)
+		session.setAttribute("erruname", "Username is empty");
+	else
+		session.setAttribute("erruname", "");
+
+	session.setAttribute("currentUser", un);
+	
+
+	for (int i = 1; i <= 5; i++) {
+		out.println("<h2>" + un);
+	}
+	%>
+	<c:redirect url="login.jsp"></c:redirect>
+	<h2>Thanks for visiting my website</h2>
+	<%
+	out.println("<h2> Todays date is :" + new Date());
+	%>
+	<h2>
+		<%
+		out.println("Welcome " + name);
+		%><br />
+		<%="Welcome" + name%>
+		<%="Num1 value is :" + num1%>
+	</h2>
+		
+		
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -83,12 +83,23 @@ input[type="text"]:focus, input[type="password"]:focus {
 </head>
 <body>
 
+
+<% 
+	String username = (String)session.getAttribute("uname");
+	String errusername = (String)session.getAttribute("erruname");
+	if(username==null)
+		username="";
+	if(errusername==null)
+		errusername="";
+	%>
 	<div class="login-container">
 		<h2>Login</h2>
 		<form action="LoginController" method="POST">
 			<div class="form-group">
 				<label for="username">Username</label> <input type="text"
-					id="username" name="username" required>
+					id="username" name="username" value="<%= username %>"
+					   >
+					   <font color="red"><%= errusername %></font>
 			</div>
 			<div class="form-group">
 				<label for="password">Password</label> <input type="password"
