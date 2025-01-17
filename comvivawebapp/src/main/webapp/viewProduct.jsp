@@ -13,7 +13,6 @@
 		class="com.training.comviva.model.Product" >
 
 <jsp:setProperty property="productId" name="product" param="productId"/>
-
 <jsp:setProperty property="productName" name="product" param="productName"/>
 <jsp:setProperty property="quantityOnHand" name="product" param="quantityOnHand"/>
 <jsp:setProperty property="price" name="product" param="price"/>
