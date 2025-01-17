@@ -2034,6 +2034,48 @@ Welcome Anu,
 Welcome Back Anu,
 
 
+===============
+
+ServletConfig	- same servlet data will be available.
+ServletContext	- all the servlet data will be available.
+
+
+web.xml - deployment descriptor
+
+
+Filter concept
+JSP
+======
+
+JSP --> Translates --> Servlet
+
+Java Server Pages
+
+-- Views
+
+Implicit objects available in JSP
+
+out
+request
+reponse
+config
+context
+session
+
+Servlet - Logic
+JSP - Views
+
+Use case : 
+login page --> 	check whether valid/invalid 	--> Display Homepage(lots of htmls/date time)
+
+HTML		Servlet			--> JSP
+
+
+<%	%>	- Scriplet
+<%!	%>	- Declaration
+<%= 	%>	- Expressions - print
+
+
 
 
 
