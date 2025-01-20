@@ -35,7 +35,10 @@ public class CheckoutControlller extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
+	int i;
+	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		int j;
 		HttpSession session = request.getSession();
 		response.setContentType("text/html");
 		

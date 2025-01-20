@@ -2589,3 +2589,128 @@ Step 4: Create CheckoutController.java
 
 
 
+Status codes
+200	informational codes
+400	404
+500	errors
+
+if(un is incorrect)
+response.sendRedirect("index.jsp");
+
+
+
+
+** No multiple selection, in one question it is mentioned choose 2 , but you have to select only one
+
+** Difference between declaring a variable in JSP declaration and JSP Scriplet
+
+** No security questions.
+
+
+=====================
+
+
+Postman		https://www.postman.com/
+Spring plugin	Eclipse Market place
+node js		https://nodejs.org/en
+
+
+DB 	- Oracle
+
+
+What is Spring ?
+
+java framework
+
+
+IOC - Inversion of control 
+and 
+DI - Dependency Injection
+
+
+
+
+
+Spring is a popular open-source framework for building Java-based applications. It provides comprehensive infrastructure support for developing enterprise applications and is particularly known for simplifying the complexity of Java programming through a number of modules that help with various aspects of development. Here's an overview of Spring and its key features:
+
+Key Features of Spring:
+Inversion of Control (IoC) and Dependency Injection (DI):
+
+The core feature of Spring is its Inversion of Control (IoC) container, which allows for loose coupling between application components.
+
+
+Dependency Injection (DI) is used to inject dependent objects into classes, reducing the need for objects to construct or manage their dependencies.
+
+
+
+
+Aspect-Oriented Programming (AOP):
+
+Spring provides support for Aspect-Oriented Programming (AOP), which allows for the separation of cross-cutting concerns (like logging, security, and transaction management) from business logic. AOP helps in maintaining cleaner code and better separation of concerns.
+Data Access Integration:
+
+Spring simplifies data access using JDBC and ORM (Object-Relational Mapping) frameworks such as Hibernate, JPA, and JDO. It offers a consistent way to handle database transactions and connections, reducing boilerplate code.
+Transaction Management:
+
+Spring provides a consistent transaction management API that works across different types of transaction management, including local, JTA, and more. This makes it easier to manage database transactions in a declarative way.
+Model-View-Controller (MVC) Framework:
+
+Spring includes a powerful and flexible web MVC framework for building web applications. The framework supports RESTful web services, request mapping, view resolution, and more.
+Security:
+
+Spring Security provides comprehensive security features for authentication and authorization. It integrates with various security technologies, such as LDAP, OAuth2, and OpenID Connect, to secure applications.
+Spring Boot:
+
+
+
+
+
+Spring Cloud:
+
+Spring Cloud is a set of tools for building distributed systems and microservices architectures. It includes features for service discovery, circuit breakers, load balancing, and distributed configuration management.
+Testing Support:
+
+Spring provides a comprehensive set of testing tools, including integration testing support, mock objects, and dependency injection in test environments, making it easier to write tests for Spring applications.
+Modularity:
+
+Spring has a modular architecture, meaning you can use only the parts you need, avoiding unnecessary overhead. For example, you can use Spring Core, Spring AOP, Spring Data, Spring Security, etc., independently.
+Integration with Other Frameworks:
+
+Spring supports integration with many other frameworks and technologies like Hibernate, JMS (Java Message Service), WebSocket, and more, enabling smooth integration and development of complex applications.
+Flexibility:
+
+Spring offers flexibility by providing various configuration options. Developers can use XML configuration, annotations, or Java-based configuration to define beans and application contexts.
+Conclusion:
+Spring is widely used due to its simplicity, scalability, and ease of integration with other technologies. Whether you're building a small application or a large enterprise-level system, Spring offers tools that can help you manage complexity and improve productivity.
+
+
+
+
+
+Spring Boot is an extension of the Spring framework that simplifies the setup and configuration of Spring applications. It allows developers to build stand-alone, production-ready applications with minimal configuration and embedded servers like Tomcat or Jetty.
+
+
+ZERO CONFIGURATION
+Embedded tomcat
+
+
+Use case : We need to generate random number for a quiz. But we don't do manage the objects.
+	
+	RandomNumberGenerator r; 
+
+
+	r.getRandomNumber();
+
+package com.training;
+
+public class RandomNumberGenerator {
+	public int getRandomNumber() {
+		// Generate a random integer between 0 (inclusive) and 99 (inclusive)
+		int randomInt = (int) (Math.random() * 100); // cast to int to get an integer value
+		return randomInt;
+	}
+}
+
+
+
+

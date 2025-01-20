@@ -9,6 +9,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.training.comviva.dao.ProductDAO;
+import com.training.comviva.model.Product;
+
 /**
  * Servlet implementation class ProductController
  */
@@ -41,17 +44,27 @@ public class ProductController extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
+	ProductDAO productDAO = new ProductDAO();	
+	
+	
+	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		int productId = Integer.parseInt(request.getParameter("productId"));
 		String productName = request.getParameter("productName");
 		int quantityOnHand = Integer.parseInt(request.getParameter("quantityOnHand"));
 		int price = Integer.parseInt(request.getParameter("price"));
 		
+		Product product = new Product(productId, productName, quantityOnHand, price);
+		
+		//save in DB
+		
+		productDAO.saveProduct(product);	// null pointer exception
+		
+		
 		String colors[] = request.getParameterValues("color");
 		
 		HttpSession session = request.getSession();
 		session.setAttribute("pname", productName);
-		
 		response.setContentType("text/html");
 		response.getWriter().println("<html>");
 		response.getWriter().println("<body>");
