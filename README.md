@@ -2587,26 +2587,6 @@ Step 4: Create CheckoutController.java
 
 
 
-
-
-Status codes
-200	informational codes
-400	404
-500	errors
-
-if(un is incorrect)
-response.sendRedirect("index.jsp");
-
-
-
-
-** No multiple selection, in one question it is mentioned choose 2 , but you have to select only one
-
-** Difference between declaring a variable in JSP declaration and JSP Scriplet
-
-** No security questions.
-
-
 =====================
 
 
@@ -2834,8 +2814,23 @@ fetchBalance
 
 3) Please prepare endpoints for below url
 
+a)
 http://localhost:9090/customer	--GET - Get all the customers (Dummy 2 customers)
+
+
+
+
+b)
 http://localhost:9090/customer/9191	--GET  - Fetching customer details for 9191
+
+
+
+
+
+
+
+
+
 http://localhost:9090/customer/9191	--DELETE  - Deleting customer details for 9191
 http://localhost:9090/customer/9191	--UPDATE  - Updating customer details for 9191
 http://localhost:9090/customer/	--POST  - Saving customer details for 9191
@@ -2849,3 +2844,29 @@ Customer customer;
 
 
 4) Test using postman
+
+============
+
+Lifecycle in spring
+
+
+Application Context
+
+In Spring, ApplicationContext is an interface that provides configuration information to an application. It extends the BeanFactory interface, which is the root interface for accessing the Spring IoC container.
+ApplicationContext context = new AnnotationConfigApplicationContext(ConvivaConfiguration.class);
+		
+		System.out.println("App context get bean : "+context.getBean("comvivahello"));
+
+Constructor Injection
+
+
+=======================
+
+
+
+Http Methods
+
+GET
+POST
+PUT
+DELETE
