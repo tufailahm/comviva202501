@@ -20,8 +20,6 @@ public class ConvivaConfiguration {
 	public Quote comvivahello() {
 		return new Quote("Honesty is not the best policy");
 	}
-	
-	
 	@Bean
 	public RandomNumberGenerator generator()
 	{

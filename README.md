@@ -2785,4 +2785,72 @@ public class Quote {
 
 
 
+What is API First ?
+What is Rest API ?
+==========================
+REST ( Representational State Transfer )
+
+
+What is Web Service ?
+What is SOAP WS?
+What is REST WS?
+
+
+@RestController	- JSON/XML
+
+Use case : Visitors are often expected in the company, other applications in comviva wants to read/update/delete the visitor information.
+
+ENDPOINTS 
+
+GET 		localhost:9090/visitors	- ALL THE VISITORS INFORMATION
+POST		localhost:9090/visitors	- CREATE/SAVE VISITOR
+					- payload [ Visitor visitor)
+
+
+//Model - class
+
+
+Hands  on
+
+
+1) Create model class Customer
+
+customerId
+customerName
+mobileNumber
+balance
+
+
+2) Create getBalance method to return dummy balance such as 9900 
+
+Create CustomerController to create five methods
+
+create
+update
+delete
+view
+viewAll
+fetchBalance
+
+3) Please prepare endpoints for below url
+
+http://localhost:9090/customer	--GET - Get all the customers (Dummy 2 customers)
+http://localhost:9090/customer/9191	--GET  - Fetching customer details for 9191
+http://localhost:9090/customer/9191	--DELETE  - Deleting customer details for 9191
+http://localhost:9090/customer/9191	--UPDATE  - Updating customer details for 9191
+http://localhost:9090/customer/	--POST  - Saving customer details for 9191
+http://localhost:9090/customer/balance-- GET	- Call fetchBalance from customer class to print 9900
+
+
+** Make sure you dont create customer object manually but use @Autowired like below
+
+@AutoWired
+Customer customer;
+
+
+
+
+
+
+
 
