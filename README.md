@@ -2459,7 +2459,7 @@ Step 2: Create Product.html
 			<!-- Product Id-->
 			<tr>
 				<td><label id="productLabelId">Product Id </label></td>
-				<td><input type="text" name="productId" id="productId" required>
+				<td>
 				</td>
 			</tr>
 
@@ -2848,9 +2848,4 @@ http://localhost:9090/customer/balance-- GET	- Call fetchBalance from customer c
 Customer customer;
 
 
-
-
-
-
-
-
+4) Test using postman
