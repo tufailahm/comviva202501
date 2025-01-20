@@ -2712,5 +2712,77 @@ public class RandomNumberGenerator {
 }
 
 
+Bean 
+========
+Object created and managed by spring IOC is known as a bean.
+
+
+
+
+
+Hands : Create a class to print your fav quote and call the method without creating object that class.
+
+localhost:9090/quote
+
+
+15 minutes
+
+
+
+
+@Autowired : The @Autowired annotation in Spring is used to automatically inject dependencies into a class. It's a core annotation in Spring's inversion of control (IoC) container. 
+
+
+How it works 
+Spring scans the code for beans and identifies dependencies
+Spring automatically finds the corresponding beans in the application context
+Spring injects the matching bean into the target class
+
+Spring Core
+===========
+
+
+
+Sterotype Annotation
+===============
+@Component
+@Service
+@Repository
+@Controller
+
+
+@Configuration
+@Bean
+@Qualifier
+@Primary
+
+@Autowired
+
+
+package com.training;
+
+import org.springframework.stereotype.Component;
+
+@Component	//quote
+public class Quote {
+	
+	String message;
+	
+	public Quote() {
+		System.out.println("####quote def cons called");
+		this.message = "Either you run the day or the day runs you";
+	}
+	
+	public Quote(String message) {
+		super();
+		this.message = message;
+	}
+
+	public String getQuote() {
+		return message;
+	}
+}
+
+
 
 
